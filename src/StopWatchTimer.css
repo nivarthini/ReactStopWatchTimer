@@ -1,0 +1,115 @@
+.outer{
+    width: 600px;
+    max-width: calc(100% - 40px);
+    min-height: 350px;
+    box-sizing: border-box;
+    margin: 70px auto;
+    padding: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border: 1px solid #dbeafe;
+    border-radius: 24px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.7s ease;
+}
+
+.outer:hover{
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.35);
+}
+
+.inner{
+    width: 100%;
+    text-align: center;
+}
+
+.inner>h2{
+    margin: 10px 0 35px;
+    color: #1d4ed8;
+    font-size: 52px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.3;
+    text-align: center;
+    animation: timerAppear 0.5s ease;
+}
+
+.inner>button{
+    width: 30%;
+    min-width: 110px;
+    padding: 16px 12px;
+    margin: 5px;
+    border: none;
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inner>button:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(15, 23, 42, 0.2);
+}
+
+.inner>h5{
+    margin-top: 25px;
+    font-size: 19px;
+    font-weight: bold;
+    color: #361aef;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes timerAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 520px) {
+    .outer {
+        max-width: calc(100% - 24px);
+        min-height: 280px;
+        margin: 35px auto;
+        padding: 20px 10px;
+        border-radius: 18px;
+    }
+
+    .inner>h2 {
+        font-size: clamp(28px, 8vw, 42px);
+        margin-bottom: 28px;
+    }
+
+    .inner>button {
+        width: 31%;
+        min-width: 0;
+        padding: 13px 3px;
+        margin: 2px;
+        font-size: 13px;
+        border-radius: 9px;
+    }
+}
